@@ -1,0 +1,17 @@
+<view class="container">
+  <view wx:if="{{!hasRecord}}">
+    <view class="info">
+      {{message}}
+    </view>
+  </view>
+  <view wx:if="{{hasRecord}}" class="listArea">
+    <view wx:for="{{recordList}}" wx:key="index" class="recordRow">
+      <view class="timeArea">
+        {{item.signInTime}}
+      </view>
+      <view class="classroomArea">
+        {{item.classroom}}
+      </view>
+    </view>
+  </view>
+</view>

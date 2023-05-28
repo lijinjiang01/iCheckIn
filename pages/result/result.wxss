@@ -1,0 +1,90 @@
+page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center；
+}
+
+.container {
+  text-align: center;
+}
+
+.resultArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+.resultCircle {
+  border-radius: 50%;
+  font-size: 14px;
+  padding: 0px;
+  text-align: center;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  width: 176px;
+  height: 176px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#successCircle {
+  background: rgb(122, 199, 86);
+}
+
+#failCircle {
+  background: rgb(223, 85, 68);
+}
+
+#successCircle::before {
+  content: "";
+  display: block;
+  width: 88px;
+  height: 50px;
+  border: 20px solid #FFF;
+  border-right: none;
+  border-top: none;
+  transform: rotate(-45deg) translate(7px, -10px);
+}
+
+#failCircle::before {
+  content: "";
+  display: block;
+  width: 88px;
+  height: 20px;
+  position: relative;
+  top: 10px;
+  left: 88px;
+  background: #FFF;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#failCircle::after {
+  content: "";
+  display: block;
+  width: 88px;
+  height: 20px;
+  position: relative;
+  top: 10px;
+  background: #FFF;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.infoArea {
+  padding-top: 120rpx;
+}
+
+.info {
+  padding: 20rpx 0;
+}
+
+#resultInfo {
+  font-size: larger;
+  font-weight: bold;
+}

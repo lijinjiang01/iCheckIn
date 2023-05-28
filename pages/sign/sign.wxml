@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="circleArea">
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+  </view>
+  <view class="imageArea">
+    <image class="bluetoothImg" mode="aspectFill"></image>
+  </view>
+  <view class="infoArea">
+    <view class="promptInfo">{{ promptInfo }}</view>
+  </view>
+</view>

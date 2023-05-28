@@ -1,0 +1,107 @@
+page{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;  
+  text-align: center；
+}
+
+.container {
+  background: rgb(65, 120, 246);
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  text-align: center；
+}
+
+.circleArea {
+  z-index: 1;
+  align-items: center;
+  justify-content: center;  
+  text-align: center；
+}
+
+.circle {
+  background-color: rgb(120, 180, 249);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: circle-animation 2s ease-in-out infinite;
+}
+
+.circle1 {
+  width: 330rpx;
+  height: 330rpx;
+  background: rgb(76, 136, 246);
+}
+
+.circle2 {
+  width: 260rpx;
+  height: 260rpx;
+  background: rgb(95, 156, 248);
+}
+
+.circle3 {
+  width: 200rpx;
+  height: 200rpx;
+  background: rgb(120, 180, 249);
+}
+
+@keyframes circle-animation {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.imageArea {
+  display: flex;
+  z-index: 2;
+}
+
+.bluetoothImg {
+  height: 50rpx;
+  width: 50rpx;
+  background-size: 100% 100%;/* 使背景图自动缩放适应大小 */
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNjgzMTU4NDQxNDgzIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjEwNDIiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik03NjcuMDE4NjY3IDcyOC43NDY2NjdsLTE4Ni4xNTQ2NjcgMTg2LjE1NDY2NmE4NS4zMzMzMzMgODUuMzMzMzMzIDAgMCAxLTYwLjMzMDY2NyAyNS4wMDI2NjdoLTcuMzM4NjY2YTQyLjY2NjY2NyA0Mi42NjY2NjcgMCAwIDEtNDIuNjY2NjY3LTQyLjY2NjY2N3YtMjQyLjYwMjY2NkwzMTQuNDk2IDgxMC42NjY2NjdhNDIuNjY2NjY3IDQyLjY2NjY2NyAwIDAgMS02My45MTQ2NjctNTYuMzJsMy41NDEzMzQtNC4wMTA2NjcgMjE2LjQwNTMzMy0yMTYuMzYyNjY3di00MS4zODY2NjZMMjU0LjEyMjY2NyAyNzYuMTM4NjY3YTQyLjY2NjY2NyA0Mi42NjY2NjcgMCAwIDEtMy41NDEzMzQtNTYuMzJsMy41NDEzMzQtNC4wMTA2NjdhNDIuNjY2NjY3IDQyLjY2NjY2NyAwIDAgMSA2MC4zNzMzMzMgMGwxNTYuMDMyIDE1Ni4wMzJWMTI5LjIzNzMzM2E0Mi42NjY2NjcgNDIuNjY2NjY3IDAgMCAxIDQyLjY2NjY2Ny00Mi42NjY2NjZoNy4yOTZhODUuMzMzMzMzIDg1LjMzMzMzMyAwIDAgMSA2MC4zNzMzMzMgMjUuMDAyNjY2bDE4Ni4xNTQ2NjcgMTg2LjE5NzMzNGE0Mi42NjY2NjcgNDIuNjY2NjY3IDAgMCAxIDAgNjAuMzMwNjY2TDYxMS44NCA1MTMuMjhsMTU1LjEzNiAxNTUuMTc4NjY3YTQyLjY2NjY2NyA0Mi42NjY2NjcgMCAwIDEgMCA2MC4zMzA2NjZ6IG0tMTk2LjYwOCA3NS45NDY2NjZsNzUuOTQ2NjY2LTc1Ljk0NjY2NmE0Mi42NjY2NjcgNDIuNjY2NjY3IDAgMCAwIDAtNjAuMzMwNjY3bC03NS45NDY2NjYtNzUuOTQ2NjY3YTguNTMzMzMzIDguNTMzMzMzIDAgMCAwLTE0LjU0OTMzNCA2LjAxNnYyMDAuMTQ5MzM0YTguNTMzMzMzIDguNTMzMzMzIDAgMCAwIDE0LjU0OTMzNCA2LjA1ODY2NnogbTc1Ljk0NjY2Ni01MDYuOTIyNjY2bC03NS45NDY2NjYtNzUuOTQ2NjY3YTguNTMzMzMzIDguNTMzMzMzIDAgMCAwLTE0LjU0OTMzNCA2LjA1ODY2N3YyMDAuMTQ5MzMzYTguNTMzMzMzIDguNTMzMzMzIDAgMCAwIDE0LjU0OTMzNCA2LjAxNmw3NS45NDY2NjYtNzUuOTQ2NjY3YTQyLjY2NjY2NyA0Mi42NjY2NjcgMCAwIDAgMC02MC4zMzA2NjZ6IiBmaWxsPSIjZmZmZmZmIiBwLWlkPSIxMDQzIj48L3BhdGg+PC9zdmc+');
+}
+
+.infoArea {
+  position: absolute;
+  top: 80%;
+}
+
+.promptInfo {
+  color: white;
+  overflow: hidden;
+  /* 隐藏超出部分 */
+  white-space: nowrap;
+  /* 不换行 */
+  animation: text-animation ease-out 2s infinite;
+  /* 动画名称、时长、循环次数 */
+}
+
+@keyframes text-animation {
+  0% {
+    width: 0;
+    /* 初始宽度为0 */
+  }
+
+  100% {
+    width: 100%;
+    /* 最终宽度为100% */
+  }
+}

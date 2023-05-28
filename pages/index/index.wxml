@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="operateArea">
+    <view class="operateBtn">
+      <button class="comps-btn-now" bindtap="gotoSign">签到</button>
+    </view>
+    <view class="operateBtn">
+      <button class="comps-btn-now" bindtap="gotoRecord">查看记录</button>
+    </view>
+    <view class="operateBtn">
+      <button class="comps-btn-now" bindtap="gotoPosition" disabled="true">实时定位</button>
+    </view>
+  </view>
+</view>

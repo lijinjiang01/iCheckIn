@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="userinfo">
+    <!-- <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data> -->
+
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image class="avatar" mode="widthFix" src="{{avatarUrl}}"></image>
+    </button>
+  </view>
+  <view class="loginArea">
+    <form class="loginForm" bindsubmit="loginAction">
+      <view class="loginRow">
+        <view class="loginLabel">姓名 : </view>
+        <view class="loginInput">
+          <input placeholder-class="inputPlaceholder" placeholder='请输入姓名' name="stu_name" />
+        </view>
+      </view>
+      <view class="loginRow">
+        <view class="loginLabel">学号 :</view>
+        <view class="loginInput">
+          <input placeholder-class="inputPlaceholder" placeholder='请输入学号' name="stu_number" />
+        </view>
+      </view>
+      <view class="btnRow">
+        <button class="loginBtn" form-type='submit'>登录</button>
+      </view>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="resultArea successArea" wx:if="{{result}}">
+    <view id="successCircle" class="resultCircle"></view>
+  </view>
+  <view class="resultArea failArea" wx:if="{{!result}}">
+    <view id="failCircle" class="resultCircle"></view>
+  </view>
+  <view class="infoArea">
+    <view id="resultInfo" class="info"> {{resultInfo}} </view>
+    <view id="messageInfo" class="info"> {{message}} </view>
+  </view>
+</view>

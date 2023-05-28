@@ -1,0 +1,84 @@
+page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  text-align: center；
+}
+
+.container {
+  padding: 10rpx 10rpx;
+  width: 90%;
+  height: 100%;
+  justify-content: center;
+  text-align: center；
+}
+
+.userinfo {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin: 60rpx 0;
+}
+
+.avatar-wrapper {
+  padding: 0;
+  width: 64px !important;
+  height: 64px !important;
+  clip-path: circle(50rpx at center);
+}
+
+.avatar {
+  width: 128rpx;
+  height: 128rpx;
+  clip-path: circle(50rpx at center);
+}
+
+/* 登录区 */
+.loginArea {
+  display: flex;
+  align-items: center;
+  height: 180px;
+}
+
+.loginForm {
+  width: 100%;
+}
+
+.loginRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-bottom: 1rpx solid #F6F7F7;
+}
+
+.loginLabel {
+  flex: 1;
+  color: #646566;
+  font-size: 32rpx;
+  line-height: 48rpx;
+  padding: 10px 16px;
+  text-align: center;
+}
+
+.loginInput {
+  flex: 3;
+  color: #323233;
+  font-size: 32rpx;
+  line-height: 48rpx;
+  padding: 10px 16px;
+}
+
+.inputPlaceholder {
+  color: #C8C9CC;
+}
+
+.btnRow {
+  margin-top: 80rpx;
+}
+
+.loginBtn {
+  background: #45B094;
+  border-color: #45B094;
+}
