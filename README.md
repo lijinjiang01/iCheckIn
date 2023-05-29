@@ -20,13 +20,40 @@ iCheckIn 为微信小程序项目，通过调用手机蓝牙功能搜索 Beacon 
 原型设计截图
 ![](https://gitee.com/lijinjiang01/image/raw/master/iCheckIn/pic02.png)
 
-## 重点代码
-签到实现代码，这里通过将查到的 Beacon 设备的 UUID 和用户的学号，传到后台进行签到处理
+## 关键代码
+这里使用 wx.startBeaconDiscovery 方法查找附近的 Beacon 设备，uuids 为筛选列表，我们只需要查询对应这些 uuid 的 Beacon 设备，查找成功后我们就可以调用该 Beacon 设备信息进行签到处理了
+``` javascript
+  //开始寻找信标设备
+  startFindDevices: function () {
+    let that = this;
+    timer = setTimeout(function () {
+      that.stopFindDevices('false', "搜索设备超时")
+    }, 10000) //搜索超时 停止扫描设备
+    wx.startBeaconDiscovery({
+      //设置ibeacons的参数
+      //000FFFF-0000-1000-8000-00805F9B34FB，这是一个通用的 UUID，可以用于扫描大多数 Beacon 设备
+      uuids: ['0000FFFF-0000-1000-8000-00805F9B34FB', 'FDA50693-A4E2-4FB1-AFCF-C6EB07647801', 'FDA50693-A4E2-4FB1-AFCF-C6EB07647802', 'FDA50693-A4E2-4FB1-AFCF-C6EB07647803', 'FDA50693-A4E2-4FB1-AFCF-C6EB07647804', 'FDA50693-A4E2-4FB1-AFCF-C6EB07647805', 'FDA50693-A4E2-4FB1-AFCF-C6EB07647806'],
+      //连接成功
+      success: function () {
+        that.doSignIn();
+      },
+      fail: function (res) {
+        console.log(res);
+        if(res.errCode == '11003'){
+          that.doSignIn();//如果已经打开了扫描设备，则直接进行签到
+        } else {
+          that.stopFindDevices('false', res.errMsg); //停止扫描设备，返回结果
+        }
+      },
+    })
+  },
+```
+
+这里通过将查到的 Beacon 设备的 UUID 和用户的学号，传到后台进行签到处理
 ``` javascript
 //进行签到
   doSignIn: function () {
     let that = this;
-    console.log("开始扫描设备")
     //监听iBeacon设备的更新事件
     wx.onBeaconUpdate(function (res) {
       wx.getBeacons({
@@ -40,7 +67,6 @@ iCheckIn 为微信小程序项目，通过调用手机蓝牙功能搜索 Beacon 
                 that.setData({
                   promptInfo: '正在签到......'
                 });
-                console.log("ibacon的个数" + count);
                 let selectIndex = 0;
                 for (let i = 0; i < count; i++) {
                   if (Math.abs(res.beacons[i].RSSI) < Math.abs(res.beacons[selectIndex].RSSI)) {
@@ -72,33 +98,24 @@ iCheckIn 为微信小程序项目，通过调用手机蓝牙功能搜索 Beacon 
                   method: 'POST',
                   data: JSON.stringify(postData),
                   success(res) {
-                    //console.log("签到接口响应成功！");
-                    //console.log(res.data);
                     if (res.data.success) {
-                      //console.log("签到成功！");
                       result = res.data.success;
                       message = res.data.data.classroom;
                     } else {
-                      //console.log("签到失败！");
                       if (res.data.message) {
-                        //console.log("res.data.message = " + res.data.message);
                         result = res.success;
                         message = res.data.message;
                       } else {
-                        //console.log("res.data.error = " + res.data.error);
                         result = false;
                         message = res.data.status + " " + res.data.error;
                       }
                     }
                   },
                   fail(res) {
-                    //console.log("签到接口返回失败！");
-                    //console.log(res);
                     result = false;
                     message = res.errMsg;
                   },
                   complete() {
-                    //console.log("签到结束！");
                     that.stopFindDevices(result, message);
                   }
                 })
