@@ -1,5 +1,15 @@
 # iCheckIn
+![IDE](https://img.shields.io/badge/IDE-WeChatDevTools-brightgreen.svg)
 
+![License](https://img.shields.io/badge/License-Apache2-orange.svg)
+
+> System : Windows 10
+>
+> WeChatDevTools : WeChatDevTools Stable 1.06.2303220
+>
+> WeChat : 8.0.35
+> 
+> 调试基础库 : 2.32.0
 #### 介绍
 iCheckIn微信小程序项目，搜索Beacon设备实现签到功能
 
