@@ -12,4 +12,7 @@
 iCheckIn 为微信小程序项目，通过调用手机蓝牙功能搜索 Beacon 设备，实现课程签到的功能
 
 ## 原型设计
-[墨刀原型设计](https://modao.cc/app/KsyPQPKKrukzxa2eCfnkvE#screen=slhlj9wy543bpud)
+[墨刀原型设计链接](https://modao.cc/app/KsyPQPKKrukzxa2eCfnkvE)
+
+原型设计截图
+![](https://gitee.com/lijinjiang01/image/raw/master/iCheckIn/pic01.png)
