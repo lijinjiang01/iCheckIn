@@ -12,13 +12,13 @@
 iCheckIn 为微信小程序项目，通过调用手机蓝牙功能搜索 Beacon 设备，实现课程签到的功能，该项目我只完成了微信小程序端的实现，流程设计和原型设计都是参考我们小组组长给的样例，重新设计的。这里是他的[GitHub主页链接](https://github.com/tokgocode)，有兴趣大家可以去点下关注
 
 ## 流程设计
-![](https://gitee.com/lijinjiang01/image/raw/master/iCheckIn/pic01.png)
+![](https://gitee.com/lijinjiang01/images/raw/master/icheckin/01.png)
 
 ## 原型设计
 [墨刀原型设计链接](https://modao.cc/app/KsyPQPKKrukzxa2eCfnkvE)
 
 原型设计截图
-![](https://gitee.com/lijinjiang01/image/raw/master/iCheckIn/pic02.png)
+![](https://gitee.com/lijinjiang01/images/raw/master/icheckin/02.png)
 
 ## 关键代码
 这里使用 wx.startBeaconDiscovery 方法查找附近的 Beacon 设备，uuids 为筛选列表，我们只需要查询对应这些 uuid 的 Beacon 设备，查找成功后我们就可以调用该 Beacon 设备信息进行签到处理了
